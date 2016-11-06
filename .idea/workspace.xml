@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d176be5-313f-49f4-ac4e-2ce103406e5d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/chess/api/Actions.scala" afterPath="$PROJECT_DIR$/src/main/scala/chess/api/Actions.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/chess/api/actors/Config.scala" afterPath="$PROJECT_DIR$/src/main/scala/chess/api/actors/Config.scala" />
     </list>
     <ignored path="scala-chess-api.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -42,22 +43,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Actions.scala" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Actions.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/chess/api/Actions.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+            <state relative-caret-position="198">
+              <caret line="11" column="55" selection-start-line="11" selection-start-column="55" selection-end-line="11" selection-end-column="55" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Config.scala" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Config.scala" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/scala/chess/api/actors/Config.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="5" column="49" selection-start-line="5" selection-start-column="49" selection-end-line="5" selection-end-column="49" />
-              <folding />
+            <state relative-caret-position="151">
+              <caret line="10" column="15" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
+              <folding>
+                <element signature="e#26#45#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -114,9 +117,9 @@
         <option value="$PROJECT_DIR$/src/main/scala/chess/api/actors/package.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/chess/api/actors/Actors.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/chess/api/ChessBoard.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/chess/api/actors/Config.scala" />
         <option value="$PROJECT_DIR$/build.sbt" />
         <option value="$PROJECT_DIR$/src/main/scala/chess/api/Actions.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/chess/api/actors/Config.scala" />
       </list>
     </option>
   </component>
@@ -896,12 +899,12 @@
       <updated>1477399825634</updated>
       <workItem from="1477399832775" duration="2226000" />
       <workItem from="1478349529625" duration="1873000" />
-      <workItem from="1478427462056" duration="2545000" />
+      <workItem from="1478427462056" duration="3714000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6644000" />
+    <option name="totallyTimeSpent" value="7813000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1029,19 +1032,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/chess/api/actors/Config.scala">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/chess/api/Actions.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="49" selection-start-line="5" selection-start-column="49" selection-end-line="5" selection-end-column="49" />
+        <state relative-caret-position="198">
+          <caret line="11" column="55" selection-start-line="11" selection-start-column="55" selection-end-line="11" selection-end-column="55" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/chess/api/Actions.scala">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/chess/api/actors/Config.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="151">
+          <caret line="10" column="15" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
+          <folding>
+            <element signature="e#26#45#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
