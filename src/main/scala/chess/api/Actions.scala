@@ -9,6 +9,8 @@ sealed trait Action {
   val target: (Int, Int)
 }
 
+case class InvalidAction(action: Action)
+
 case class Move(pieceId: Int, origin: (Int, Int), target: (Int, Int)) extends Action
 
 case class MoveAndChange(pieceId: Int, origin: (Int, Int), target: (Int, Int), choice: MoveAndChangeChoice) extends Action with Choice
