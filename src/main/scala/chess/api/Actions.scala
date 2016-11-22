@@ -3,37 +3,33 @@ package chess.api
 import chess.api.MoveAndChangeChoice.MoveAndChangeChoice
 
 trait Atomic {
-  val actions = Iterable()
+  val actions = List()
 }
 
 sealed trait Action extends Iterable[Action] {
   val pieceId: Int
+  val origin: Option[Position]
   val target: Position
-  val actions: Iterable[Action]
-  val origin: Position = (0,0)
+  val actions: List[Action]
 
   override def iterator: Iterator[Action] = actions.iterator
 }
 
 case class InvalidAction(error: String, action: Action)
 
-case class Remove(pieceId: Int, target: Position) extends Action with Atomic
+case class Remove(pieceId: Int, target: Position, origin: Option[Position] = None) extends Action with Atomic
 
-case class Put(pieceId: Int, target: Position) extends Action with Atomic
+case class Put(pieceId: Int, target: Position, origin: Option[Position] = None) extends Action with Atomic
 
-case class PutInitial(target: Position, piece: Piece) extends Action with Atomic {
+case class PutInitial(target: Position, piece: Piece, origin: Option[Position] = None) extends Action with Atomic {
   override val pieceId: Int = piece.id
 }
 
-trait Origin {
-  val origin: Position
-}
+case class Move(pieceId: Int, target: Position, actions: List[Action], origin: Option[Position] = None) extends Action
 
-case class Move(pieceId: Int, target: Position, actions: Iterable[Action]) extends Action
+case class Castle(pieceId: Int, target: Position, actions: List[Action], origin: Option[Position] = None) extends Action
 
-case class Castle(pieceId: Int, target: Position, actions: Iterable[Action]) extends Action
-
-case class MoveAndChange(pieceId: Int, target: Position, actions: Iterable[Action], choice: MoveAndChangeChoice) extends Action with Choice
+case class MoveAndChange(pieceId: Int, target: Position, actions: List[Action], choice: MoveAndChangeChoice, origin: Option[Position] = None) extends Action with Choice
 
 trait Choice {
   val choice: ChoiceVal
