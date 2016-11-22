@@ -5,8 +5,8 @@ import java.net.URL
 import akka.actor.ActorRef
 import com.typesafe.config.ConfigFactory
 
-case class RegisterObserver(observer: ActorRef)
-case class UnregisterObserver(observer: ActorRef)
+case class RegisterObserver()
+case class UnregisterObserver()
 
 object Config {
   def controllerActorPath = {
