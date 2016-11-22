@@ -6,16 +6,12 @@ trait Atomic {
   val actions = Seq()
 }
 
-sealed trait Action extends Seq[Action] {
+sealed trait Action extends Iterable[Action] {
   def pieceId: Int
 
   def target: Position
 
   def actions: Seq[Action]
-
-  override def length: Int = actions.length
-
-  override def apply(idx: Int): Action = actions.apply(idx)
 
   override def iterator: Iterator[Action] = actions.iterator
 }
