@@ -1,6 +1,6 @@
 package chess.api
 
-import chess.api.MoveAndReplaceChoice.MoveAndChangeChoice
+import chess.api.MoveAndReplaceChoice.MoveAndReplaceChoice
 
 trait Atomic {
   val actions = Seq()
@@ -51,7 +51,7 @@ case class Replace(pieceId: Int, remove: Remove, putInitial: PutInitial) extends
 }
 
 
-case class MoveAndReplace(pieceId: Int, move: Move, replace: Replace, choice: MoveAndChangeChoice) extends Action with Choice {
+case class MoveAndReplace(pieceId: Int, move: Move, replace: Replace, choice: MoveAndReplaceChoice) extends Action with Choice {
   override def target: Position = move.target
 
   override def actions: Seq[Action] = Seq(move, replace)
@@ -65,14 +65,14 @@ trait ChoiceVal
 
 object MoveAndReplaceChoice {
 
-  trait MoveAndChangeChoice extends ChoiceVal
+  trait MoveAndReplaceChoice extends ChoiceVal
 
-  case object Queen extends MoveAndChangeChoice
+  case object Queen extends MoveAndReplaceChoice
 
-  case object Rook extends MoveAndChangeChoice
+  case object Rook extends MoveAndReplaceChoice
 
-  case object Knight extends MoveAndChangeChoice
+  case object Knight extends MoveAndReplaceChoice
 
-  case object Bishop extends MoveAndChangeChoice
+  case object Bishop extends MoveAndReplaceChoice
 
 }
