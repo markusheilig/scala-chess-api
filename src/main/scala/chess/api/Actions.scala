@@ -22,7 +22,7 @@ case class Remove(pieceId: Int, target: Position) extends Action with Atomic
 
 case class Put(pieceId: Int, target: Position) extends Action with Atomic
 
-case class Undo()
+case object Undo
 
 case class PutInitial(target: Position, piece: Piece) extends Action with Atomic {
   override val pieceId: Int = piece.id
