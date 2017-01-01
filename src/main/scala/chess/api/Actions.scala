@@ -5,6 +5,14 @@ trait Atomic {
   val actions = Seq()
 }
 
+trait Choice {
+  def choice: String
+}
+
+trait HasPiece {
+  def piece: Piece
+}
+
 sealed trait Action extends Iterable[Action] {
   def pieceId: Int
 
@@ -13,15 +21,16 @@ sealed trait Action extends Iterable[Action] {
   def actions: Seq[Action]
 
   override def iterator: Iterator[Action] = actions.iterator
+
 }
 
-case class InvalidAction(error: String, action: Action)
+case class InvalidAction(error: String)
 
 case class Remove(pieceId: Int, target: Position) extends Action with Atomic
 
 case class Put(pieceId: Int, target: Position) extends Action with Atomic
 
-case class PutInitial(target: Position, piece: Piece) extends Action with Atomic {
+case class PutInitial(target: Position, piece: Piece) extends Action with Atomic with HasPiece{
   override val pieceId: Int = piece.id
 }
 
@@ -32,11 +41,9 @@ case class Move(pieceId: Int, remove: Remove, put: Put, removeAtTarget: Option[R
 }
 
 case class Castle(pieceId: Int, kingMove: Move, rookMove: Move) extends Action {
-
-  override def target: Position = kingMove.remove.target
+  override def target: Position = rookMove.remove.target
 
   override def actions: Seq[Action] = Seq(kingMove, rookMove)
-
 }
 
 case class Replace(pieceId: Int, remove: Remove, putInitial: PutInitial) extends Action {
@@ -46,7 +53,7 @@ case class Replace(pieceId: Int, remove: Remove, putInitial: PutInitial) extends
 }
 
 
-case class MoveAndReplace(pieceId: Int, move: Move, replace: Replace, choice: String) extends Action {
+case class MoveAndReplace(pieceId: Int, move: Move, replace: Replace, choice: String) extends Action with Choice {
   override def target: Position = move.target
 
   override def actions: Seq[Action] = Seq(move, replace)
