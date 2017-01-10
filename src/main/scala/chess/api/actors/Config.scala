@@ -10,7 +10,7 @@ case class UnregisterObserver()
 
 object Config {
   def controllerActorPath = {
-    val url = new URL("https://raw.githubusercontent.com/markusheilig/scala-chess/master/src/main/resources/application.conf")
+    val url = new URL("https://raw.githubusercontent.com/scala-chess/scala-chess/master/src/main/resources/application.conf")
     val config = ConfigFactory.parseURL(url)
     val actorSystem = config.getString("akka.chess.systemName")
     val actorName = config.getString("akka.chess.actorName")
