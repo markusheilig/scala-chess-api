@@ -13,7 +13,7 @@ trait HasPiece {
   def piece: Piece
 }
 
-sealed trait Action extends Iterable[Action] {
+trait Action extends Iterable[Action] {
   def pieceId: Int
 
   def target: Position
@@ -30,7 +30,7 @@ case class Remove(pieceId: Int, target: Position) extends Action with Atomic
 
 case class Put(pieceId: Int, target: Position) extends Action with Atomic
 
-case class PutInitial(target: Position, piece: Piece) extends Action with Atomic with HasPiece{
+case class PutInitial(target: Position, piece: Piece) extends Action with Atomic with HasPiece {
   override val pieceId: Int = piece.id
 }
 
